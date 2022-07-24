@@ -26,7 +26,7 @@ def New_file(str1, str2):
 def Read_excel(file):
     dict_data = pd.read_excel(file.file_add + file.file_name, usecols=file.usecols, sheet_name=file.sheet_name,
                               header=file.header, index_col=file.index_col, skiprows=file.skiprows)
-    print('=====' + file.file_name + '数据读取完成.=====')
+    print(file.file_name + '数据读取完成')
     df = dict_data[0]
     return df
 
@@ -36,17 +36,17 @@ def Merge(df1,df2,loc1,loc2):
 
 def Save(df_data,path):                #保存成EXCEL文件
     df_data.to_excel(path)
-    print('文件保存完成。')
+    print('文件保存完成')
 #################################################################################
-file1_add = 'd:\\py123\\'
-file1_name = '1.xlsx'
+file1_add = 'd:\\py123\\'      #主文件路径
+file1_name = '1.xlsx'          #主文件名称 
 
-file2_add = 'd:\\py123\\'
-file2_name = '123.xlsx'
+file2_add = 'd:\\py123\\'      #副文件路径
+file2_name = '123.xlsx'        #副文件名称
 
 
-loc1='卡口'
-loc2='账户'
+loc1='卡口'                    #需要匹配的列
+loc2='账户'                    #需要合并的列
 #################################################################################
 
 file1 = New_file(file1_add, file1_name)
