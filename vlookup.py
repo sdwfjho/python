@@ -1,8 +1,8 @@
 import pandas as pd
 
 
-class File:                            
-    file_add = str
+class File:
+    file_path = str
     file_name = str
     usecols = list
     sheet_name = [0]
@@ -11,7 +11,7 @@ class File:
     skiprows = []
 
 
-def New_file(str1, str2):              
+def New_file(str1, str2):
     s = File()
     s.file_add = str1
     s.file_name = str2
@@ -30,23 +30,31 @@ def Read_excel(file):
     df = dict_data[0]
     return df
 
-def Merge(df1,df2,loc1,loc2):
-    df = df1.merge( df2.loc[:, [loc1,loc2]], how='left', on=loc1)
+
+def Merge(df1, df2, loc1, loc2):
+    df = df1.merge(df2.loc[:, [loc1, loc2]], how='left', on=loc1)
     return df
 
-def Save(df_data,path):                #保存成EXCEL文件
-    df_data.to_excel(path)
-    print('文件保存完成')
+
+def Save(df_data, result_path, result_name):  # 保存成EXCEL文件
+
+    df_data.to_excel(result_path + result_name)
+    print(result_name + '保存完成')
+
+
 #################################################################################
-file1_add = 'd:\\py123\\'      #主文件路径
-file1_name = '1.xlsx'          #主文件名称 
+file1_path = 'd:\\py123\\'  # 主文件路径
+file1_name = '1.xlsx'  # 主文件名称
 
-file2_add = 'd:\\py123\\'      #副文件路径
-file2_name = '123.xlsx'        #副文件名称
+file2_path = 'd:\\py123\\'  # 副文件路径
+file2_name = '123.xlsx'  # 副文件名称
 
 
-loc1='卡口'                    #需要匹配的列
-loc2='账户'                    #需要合并的列
+loc1 = '卡口'  # 需要匹配的列
+loc2 = '账户'  # 需要合并的列
+
+result_path = ''  # 合并文件保存路径
+result_name = ''  # 合并文件名称
 #################################################################################
 
 file1 = New_file(file1_add, file1_name)
@@ -54,6 +62,6 @@ file2 = New_file(file2_add, file2_name)
 df1 = Read_excel(file1)
 df2 = Read_excel(file2)
 
-result = Merge(df1,df2,loc1,loc2)
-Save(result,'d:\\py123\\111.xlsx')
+result = Merge(df1, df2, loc1, loc2)
+Save(result, result_path, result_name)
 print(result)
