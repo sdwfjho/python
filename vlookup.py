@@ -36,7 +36,7 @@ def Merge(df1,df2,loc1,loc2):
 
 def Save(df_data,path):                #保存成EXCEL文件
     df_data.to_excel(path)
-    print('\n文件保存完成。')
+    print('文件保存完成。')
 #################################################################################
 file1_add = 'd:\\py123\\'
 file1_name = '1.xlsx'
