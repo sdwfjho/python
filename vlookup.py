@@ -57,8 +57,8 @@ result_path = ''  # 合并文件保存路径
 result_name = ''  # 合并文件名称
 #################################################################################
 
-file1 = New_file(file1_add, file1_name)
-file2 = New_file(file2_add, file2_name)
+file1 = New_file(file1_path, file1_name)
+file2 = New_file(file2_path, file2_name)
 df1 = Read_excel(file1)
 df2 = Read_excel(file2)
 
