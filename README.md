@@ -1,2 +1,2 @@
 # python pandas
-####  merge()方法
+####  df.merge()方法
