@@ -6,15 +6,14 @@ def Read_excel(file_name):
     print(file_name + '读取完成.')
     return df
 
-
 def Merge(df1, df2):
     df = df1.merge(df2.loc[:, ['户号', '使用量','应收']], how='outer')
     return df
 
-
 def Save(df,result_name):  
     df.to_excel('d:\\github\\file\\result\\' + result_name)
     print(result_name + '保存完成')
+    
 def Star(file1_name,file2_name,result_name):
     df1 = Read_excel(file1_name)
     df2 = Read_excel(file2_name)
