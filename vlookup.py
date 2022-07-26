@@ -20,10 +20,16 @@ def Star(file1_name,file2_name,result_name):
     result = Merge(df1, df2)
     Save(result, result_name)
 
+def Concat(df1,df2):
+    df.concat([df1,df2],ignore_index =True,sort=False)#只合并相同列添加join='inner'参数。
+
+
+
+
 #################################################################################
 file1_name = 'a.xls'  # 主文件名称
 file2_name = 'b.xls'  # 副文件名称
 result_name = '使用情况副本.xlsx'  # 合并文件名称
 #################################################################################
 
-Star(file1_name,file2_name,result_name)
+# Star(file1_name,file2_name,result_name)
