@@ -3,10 +3,10 @@ from email import header
 import pandas as pd
 import io
 
-path_fk = 'd:\\github\\fromwork\\'
+path_fk = 'd:\\github\\python\\fromwork\\'
 path_file = 'd:\\github\\file\\'
 path_result = 'd:\\github\\result\\'
-kkk = pd.read_excel(path_result + '空白.xls' )
+kkk = pd.read_excel(path_fk + '空白模板.xls' )
 
 
 haeder = pd.read_excel(path_fk + '潍城区工商户-法人缴费信息.xls',header=1)
